@@ -5,7 +5,8 @@
 //
 // Description:
 //      This class is responsible for serving a single data object for use in
-//      SoS.
+//      SoS. SSData is a base class from which a dedicated data class can be
+//      developed for a specific sample of images.
 //
 
 #ifndef SSDATA_HPP
@@ -19,9 +20,10 @@ public:
     virtual ~SSData(void);
 
     /* Operators */
-    SSData operator=(const SSData& other);
 
     /* Methods */
+    virtual bool Load(void) = 0;
+    virtual bool Clear(void);
 
     /* Variables */
 

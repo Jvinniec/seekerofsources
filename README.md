@@ -6,9 +6,12 @@ SoS implements a convolutional neural network (CNN) for finding/classifying obje
 * Define README sections
 
 # Dependencies
-TensorFlow (described [here]()) is the primary external dependency.
+TensorFlow (described [here](https://www.tensorflow.org/)) is the primary 
+external dependency. This is the code base that implements the actual machine
+learning components.
 
-cfitsio ([here]()) is also required in order to create/update FITS files.
+cfitsio ([here](https://heasarc.gsfc.nasa.gov/fitsio/fitsio.html)) is also 
+required in order to create/update FITS files.
 
 # Downloading
 
