@@ -40,5 +40,6 @@ private:
 
     /* Variables */
 
-}
+};
+
 #endif /* SSTRAINER_HPP */

@@ -27,7 +27,7 @@ SSData::SSData(void)
  *
  * @param[in] other         Other object to be copied
  ****************************************************************************/
-SData::SSData(const SSData& other)
+SSData::SSData(const SSData& other)
 {
 
 }

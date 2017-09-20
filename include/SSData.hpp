@@ -19,7 +19,7 @@ public:
     virtual ~SSData(void);
 
     /* Operators */
-    operator=(const SSData& other);
+    SSData operator=(const SSData& other);
 
     /* Methods */
 
