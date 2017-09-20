@@ -4,6 +4,8 @@
 ./**/*.in
 **/Makefile
 **/*make
+**/CMakeFiles
+**/CMakeCache*
 
 #=================================================
 # Ignore compiled files
