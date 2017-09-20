@@ -1,0 +1,6 @@
+# Ignore intermediate configuration/make files
+./**/*.in
+./**/Makefile
+
+# Ignore compiled files
+./**/*.o
