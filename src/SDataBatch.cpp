@@ -1,14 +1,13 @@
 //
-// SSGraph.cpp
+// SDataBatch.cpp
 //
-// Author: J. Cardenzana
+// Author: J.V. Cardenzana
 //
-// Description
-//      Constructs the TensorFlow graph
+// Description:
+//
 //
 
-#include "SSGraph.hpp"
-
+#include "SDataBatch.hpp"
 
 //=========================================================================//
 // Constructors / Deconstructor
@@ -17,16 +16,17 @@
 /************************************************************************//**
  * @brief Default constructor
  ****************************************************************************/
-SSGraph::SSGraph(void)
+SDataBatch::SDataBatch(void)
 {
-
 }
 
 
 /************************************************************************//**
  * @brief Copy constructor
+ *
+ * @param[in] other         Object to be copied
  ****************************************************************************/
-SSGraph::SSGraph(const SSGraph& other)
+SDataBatch::SDataBatch(const SDataBatch& other)
 {
 
 }
@@ -35,16 +35,16 @@ SSGraph::SSGraph(const SSGraph& other)
 /************************************************************************//**
  * @brief Deconstructor
  ****************************************************************************/
-SSGraph::~SSGraph(void)
+SDataBatch::~SDataBatch(void)
 {
 
 }
 
 //=========================================================================//
-// Public Members
+// Public Methods
 //=========================================================================//
 
 
 //=========================================================================//
-// Protected Members
+// Protected Methods
 //=========================================================================//

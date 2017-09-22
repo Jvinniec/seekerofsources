@@ -1,5 +1,5 @@
 //
-// SSTrainer.hpp
+// STrainer.hpp
 //
 // Author: J. Cardenzana
 //
@@ -8,39 +8,42 @@
 //    astronomy images for sources.
 //
 
-#ifndef SSTRAINER_HPP
-#define SSTRAINER_HPP
+#ifndef STRAINER_HPP
+#define STRAINER_HPP
 
 #include <string>
 #include <vector>
 
 // SOS CLASSES
-#include "SSDataBatch.hpp"
-#include "SSGraph.hpp"
+#include "SDataBatch.hpp"
+#include "SGraph.hpp"
 
-class SSTrainer {
+class STrainer {
 public:
     /* Constructors/Destructor */
-    SSTrainer(void);
-    SSTrainer(const SSGraph& graph);
-    SSTrainer(const SSTrainer& other);
-    virtual ~SSTrainer(void);
+    STrainer(void);
+    STrainer(const SSGraph& graph);
+    STrainer(const SSTrainer& other);
+    virtual ~STrainer(void);
 
     /* Operators */
 
 
     /* Methods */
     void SaveModel(const std::string& filename);
-    void TrainModel(const SSDataBatch& data);
+    void TrainModel(const SDataBatch& data);
 
     /* Variables */
 
 protected:
 
     /* Methods */
+    void InitMembers(void);
+    void CopyMembers(const STrainer& other);
+    void FreeMembers(void);
 
     /* Variables */
-    SSGraph s_graph;            //!< TensorFlow graph
+    SGraph s_graph;            //!< TensorFlow graph
 
 private:
 
@@ -50,4 +53,4 @@ private:
 
 };
 
-#endif /* SSTRAINER_HPP */
+#endif /* STRAINER_HPP */

@@ -1,23 +1,23 @@
 //
-// SSData.hpp
+// SData.hpp
 //
 // Author: J. Cardenzana
 //
 // Description:
 //      This class is responsible for serving a single data object for use in
-//      SoS. SSData is a base class from which a dedicated data class can be
+//      SoS. SData is a base class from which a dedicated data class can be
 //      developed for a specific sample of images.
 //
 
-#ifndef SSDATA_HPP
-#define SSDATA_HPP
+#ifndef SDATA_HPP
+#define SDATA_HPP
 
-class SSData {
+class SData {
 public:
     /* Constructors */
-    SSData(void);
-    SSData(const SSData& other);
-    virtual ~SSData(void);
+    SData(void);
+    SData(const SData& other);
+    virtual ~SData(void);
 
     /* Operators */
 
@@ -29,13 +29,16 @@ public:
 
 protected:
 
-    /* Variables */
-
     /* Methods */
+    void InitMembers(void);
+    void CopyMembers(const SData& other);
+    void FreeMembers(void);
+
+    /* Variables */
 
 
 private:
 
 };
 
-#endif /* SSDATA_HPP */
+#endif /* SDATA_HPP */

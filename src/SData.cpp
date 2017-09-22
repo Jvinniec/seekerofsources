@@ -1,5 +1,5 @@
 //
-// SSData.cpp
+// SData.cpp
 //
 // Author: J. Cardenzana
 //
@@ -7,7 +7,7 @@
 //      Class for serving data for SoS processing
 //
 
-#include "SSData.hpp"
+#include "SData.hpp"
 
 //=========================================================//
 //                      CONSTRUCTORS                       //
@@ -16,7 +16,7 @@
 /************************************************************************//**
  * @brief Default constructor
  ****************************************************************************/
-SSData::SSData(void)
+SData::SData(void)
 {
 
 }
@@ -27,7 +27,7 @@ SSData::SSData(void)
  *
  * @param[in] other         Other object to be copied
  ****************************************************************************/
-SSData::SSData(const SSData& other)
+SData::SData(const SData& other)
 {
 
 }
@@ -36,7 +36,7 @@ SSData::SSData(const SSData& other)
 /************************************************************************//**
  * @brief Destructor
  ****************************************************************************/
-SSData::~SSData(void)
+SData::~SData(void)
 {
 
 }
@@ -48,7 +48,7 @@ SSData::~SSData(void)
 /************************************************************************//**
  * @brief Clear the underlying data objects
  ****************************************************************************/
-bool Clear(void)
+bool SData::Clear(void)
 {
 
 }

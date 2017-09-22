@@ -1,5 +1,9 @@
 # seekerofsources
-SoS implements a convolutional neural network (CNN) for finding/classifying objects in astronomy data.
+SoS implements a convolutional neural network (CNN) for finding/classifying 
+objects in astronomy data. I would really like this to have a C++ interface,
+but at the moment it looks like the TensorFlow C++ API is insufficient to
+easily make this doable. So, in the meantime the approach will be to code in
+Python (3.6+!!!) and possibly make an interface to the Python code in C++.
 
 # TODO before initial release
 * Flesh out codebase

@@ -40,6 +40,13 @@ set (CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} ${SOS_CXX_FLAGS}")
  
 #-------------------------------------------
 
+# Define the TensorFlow include and library information
+if (tensorflow)
+   set (CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} ${SOS_CXX_FLAGS} -I${tensorflow} -I${tensorflow}/third_party/eigen3")
+endif()
+
+#-------------------------------------------
+
 # Define a macro for SoS executable compilation
 # so that I dont have to specify that it depends on
 # the SoS library EVERY SINGLE TIME!

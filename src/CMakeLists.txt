@@ -9,13 +9,19 @@ include_directories (${CMAKE_CURRENT_SOURCE_DIR}/../include)
 # by the SeekerOfSources library
 #------------------------------------------
 set (sos_SOURCES
-    SSData.cpp
-    SSTrainer.cpp
+    SData.cpp
+    SDataBatch.cpp
+    SGraph.cpp
+    SHiddenLayer.cpp
+    STrainer.cpp
     )
 
 set (sos_HEADERS
-    ../include/SSData.hpp
-    ../include/SSTrainer.hpp
+    ../include/SData.hpp
+    ../include/SDataBatch.hpp
+    ../include/SGraph.hpp
+    ../include/SHiddenLayer.hpp
+    ../include/STrainer.hpp
     )
 
 #------------------------------------------

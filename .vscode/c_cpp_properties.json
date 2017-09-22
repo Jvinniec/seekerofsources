@@ -9,7 +9,9 @@
                 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
                 "/usr/include",
                 "${workspaceRoot}",
-                "${workspaceRoot}/include"
+                "${workspaceRoot}/include",
+                "/Users/joshcardenzana/Development/gitRepos/tensorflow",
+                "/Users/joshcardenzana/Development/gitRepos/tensorflow/third_party/eigen3"
             ],
             "defines": [],
             "intelliSenseMode": "clang-x64",
