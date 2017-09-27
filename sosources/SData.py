@@ -71,60 +71,60 @@ class SData:
         # Get the appropriate hooks from the dataset
         return 0
     
-    def Filename(self, filename=""):
+    def Filename(self, filename=None):
         """ Get/set the filename to extract the data from
 
         @param[in] filename         Filename to get data from
         """
         # If 'filename' isn't blank, return it's value
-        if filename != "":
+        if filename is not None:
             self._filename = filename
 
         # Return the filename
         return self._filename
 
 
-    def Classification(self, classification=""):
+    def Classification(self, classification=None):
         """ Sets the image's classification
 
         @param[in] classification         Object classification
         """
         # Update the classification if needbe
-        if classification != "":
+        if classification is not None:
             self._classification = classification
 
         # Return the objects classification
         return self._classification
 
 
-    def Nxpix(self, xpix=0):
+    def Nxpix(self, xpix=None):
         """ Get/set the number of pixels in the x-axis
 
         @param[in] xpix           Number of pixels in x-axis
         """
-        if (xpix > 0):
+        if xpix is not None:
             self._nxpix = xpix
         
         return self._nxpix
             
 
-    def Nypix(self, ypix=0):
+    def Nypix(self, ypix=None):
         """ Get/set the number of pixels in the y-axis
 
         @param[in] ypix           Number of pixels in y-axis
         """
-        if ypix > 0:
+        if ypix is not None:
             self._nypix = ypix
 
         return self._nypix
 
 
-    def Nzpix(self, zpix=-1):
+    def Nzpix(self, zpix=None):
         """ Get/set the number of pixels in the z-axis
 
         @param[in] zpix           Number of pixels in z-axis
         """
-        if zpix > -1:
+        if zpix is not None:
             self._nzpix = zpix
 
         return self._nzpix

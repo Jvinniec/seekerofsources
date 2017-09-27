@@ -86,3 +86,10 @@ int SMyClass::MyFunction(int param1,
 ```
 
 # General
+
+
+# Projects TODO
+This is a list of projects that it would be nice for developers to get involved
+and help implement.
+* Enable TensorBoard output
+* Visualization of layer masks

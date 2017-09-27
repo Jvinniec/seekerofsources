@@ -4,7 +4,7 @@
 // Author: J.V. Cardenzana
 //
 // Description:
-//      Outlines the basic implementation for using the SoS library.
+//      Outlines a basic usage scenario for training a model
 //
 
 int main(int argc, char** argv)

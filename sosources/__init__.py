@@ -1,5 +1,5 @@
 # ==========================================================================
-# STrainer.py
+# __init__.py
 # ==========================================================================
 # Copyright (C) 2017 J. V. Cardenzana
 #
@@ -18,35 +18,13 @@
 #
 # ==========================================================================
 # Description:
-#       Implements training of a TensorFlow graph for a simple convolutional 
-#       neural network.
-#
+#       This file defines the classes that make up the 'Seeker of Sources'
+#       python module
+# ==========================================================================
 
-import SGraph
-import tensorflow as tf
-
-class STrainer:
-    """ Class for training a CNN in Tensorflow
-    """
-
-    def __init__(self):
-        """ Initilizes the training class
-        """
-        self._graph = SGraph
-
-
-    def Graph(self, graph):
-        """ Get/set the graph to be trained
-
-        @param[in] graph            TensorFlow graph object
-        """
-        self._graph = graph
-
-    def InitTrainer(self):
-        """ Initialize the trainer, assembling the graph
-        """
-        # Create the model variable
-        x = tf.placeholder(tf.float32, [None, 112*112], name='x-input')
-
-        # Define loss and optimizer
-        y_ = tf.placeholder(tf.float32, [None, 3], name='y-input')
+from sosources.SData        import SData
+from sosources.SDataBatch   import SDataBatch
+from sosources.SGraph       import SGraph
+from sosources.SHiddenLayer import SHiddenLayer
+from sosources.STrainer     import STrainer
+import sosources.SVarTypes  as var
