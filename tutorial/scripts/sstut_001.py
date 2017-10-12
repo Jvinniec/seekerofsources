@@ -51,7 +51,7 @@ def LoadDataManager(filenames):
     return databatch
 
 
-def CreateGraph(x):
+def CreateGraph():
     """ Creates a generic TensorFlow graph with two hidden layers 
     
     @param[in] x            Input tensor representing a 1D representation of image
@@ -72,7 +72,7 @@ def CreateGraph(x):
     graph.AppendLayer( hidden3 )
 
     # Return the initialized TensorFlow graph objects
-    return graph.InitGraph(x)
+    return graph
 
 
 def GetOpts():
@@ -90,48 +90,20 @@ def main(_):
     # Load the data
     data = LoadDataManager(FLAGS.image_lists)
 
-    # Create the input image tensor variable
-    image_bins = 112*112    # <-- This should be easy to get from the input data
-    x = sos.var.PlaceHolder(tf.float32, [None, image_bins], name='x-input')
-    
-    # Create the image classifications variable (the 'truth' used for training)
-    y_ = sos.var.PlaceHolder(tf.float32, [None, data._class_ids], name='y-input')
+    # Create the graph
+    graph = CreateGraph()
 
-    # Initialize the graph
-    # y_conv    = output classification based on current network
-    # keep_prob = Probability variable for keeping a node 
-    y_conv, keep_prob = CreateGraph(x)
+    # Create the training algorithm
+    trainer = sos.STrainer()
+    trainer.DataManager( data )
+    trainer.Graph( graph )
 
-    # Now initialize the rest of the training variables
-    cross_entropy = tf.reduce_mean(
-        tf.nn.softmax_cross_entropy_with_logits(labels=y_, logits=y_conv))
-    train_step = tf.train.AdamOptimizer(1e-4).minimize(cross_entropy)
-    correct_prediction = tf.equal(tf.argmax(y_conv, 1), tf.argmax(y_, 1))
-    accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+    # Set a small batch size since we have a small data set
+    trainer._batch_size = 10
 
-    # Now create the session and train the graph
-    with tf.Session() as sess:
-        # Get the test images and truth classifiers
-        test_imgs, test_truth = data.LoadTests()
-
-        print('Initial test accuracy %g' % accuracy.eval(feed_dict={
-              x: test_imgs, y_: test_truth, keep_prob: 1.0}))
-
-        # Run a number of training steps
-        for i in range(100):
-            #randnums = gen_random(50, 0, len(obj_list))
-            train_sample, truth_sample = data.NextBatch(10)
-            
-            if i % 10 == 0:
-                train_accuracy = accuracy.eval(feed_dict={
-                        x: train_sample, y_: truth_sample, keep_prob: 1.0})
-                print('step %d, training accuracy %g' % (i, train_accuracy))
-      
-            train_step.run(feed_dict={x: train_sample, y_: truth_sample, keep_prob: 0.5})
-            #writer.add_summary(summ, global_step=i)
-
-        print('Final test accuracy %g' % accuracy.eval(feed_dict={
-              x: test_imgs, y_: test_truth, keep_prob: 1.0}))
+    # Initialize and run the graph trainer
+    trainer.InitTrainer()
+    trainer.Train(100)
 
 
 if __name__ == '__main__':
